@@ -123,10 +123,16 @@
 };
 
 &soc {
-
-    hall {
-
-		compatible = "hall-switch";
+	ntc_sensor {
+		compatible = "ntc-sensor";
+		qcom,board_ntc-vadc = <&pm8950_vadc>;
+		ntc_vdd-supply = <&pm8950_l16>;
+		qcom,ntc-min-uv = <1800000>;
+		qcom,ntc-max-uv = <1800000>;
+	};
+	
+	hall_switch {
+		compatible = "hall-switch,och175";
 		interrupt-parent = <&msm_gpio>;
 		interrupts = <107 0x2003>;
 		linux,gpio-int = <&msm_gpio 107 0x1>;
@@ -137,7 +143,7 @@
 		pinctrl-names = "default";
 		vddio-supply = <&pm8950_l5>;
 	};
-
+	
 	gen-vkeys {
 		compatible = "qcom,gen-vkeys";
 		label = "ft5x06_ts";
@@ -147,6 +153,7 @@
 		qcom,panel-maxy = <2200>;
 		qcom,key-codes = <139 172 158>;
 	};
+	
 	gpio_keys {
 		compatible = "gpio-keys";
 		input-name = "gpio-keys";
@@ -384,3 +391,4 @@
 &pm8950_cajon_analog {
 	status = "disabled";
 };
+
