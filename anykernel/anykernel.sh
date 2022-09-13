@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=B⚡️LT:Revolution
+kernel.string=B⚡️LT:Xtreme
 do.devicecheck=1
 do.modules=0
 do.cleanup=1

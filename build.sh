@@ -16,7 +16,7 @@ KERNEL_DIR=$PWD
 ANYKERNEL_DIR=$KERNEL_DIR/anykernel/
 DATE=$(date +"%d%m%Y")
 TIME=$(date +"-%H.%M.%S")
-KERNEL_NAME="B⚡️LT:Revolution"
+KERNEL_NAME="B⚡️LT:Xtreme"
 KERNEL_VERSION="3.10.108-"
 DEVICE="-kenzo-"
 FINAL_ZIP="$KERNEL_VERSION""$KERNEL_NAME""$DEVICE""$DATE""$TIME"
@@ -39,8 +39,7 @@ make O=out ARCH=arm64 kenzo_defconfig
 export KBUILD_BUILD_USER="genxinvenits"
 export KBUILD_BUILD_HOST="oxiizen.com"
 export ARCH=arm64 && export SUBARCH=arm64 && export USE_CCACHE=1
-export CROSS_COMPILE=$HOME/Downloads/Android/Tools/GCC-6.5/bin/aarch64-linux-
-export CROSS_COMPILE_ARM32=$HOME/Downloads/Android/Tools/GCC-6.5/bin/arm-linux-gnueabi-
+export CROSS_COMPILE=aarch64-linux-gnu-
 make -j4 O=out kenzo_defconfig\ARCH=arm64
 
 echo -e "$yellow***********************************************"
